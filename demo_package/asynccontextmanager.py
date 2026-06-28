@@ -1,6 +1,10 @@
 from contextlib import asynccontextmanager
 import asyncio
-
+'''
+yield之前在整个项目中负责执行的是项目的预热
+例如 bge-m3模型的加载 mysql的预热
+yield之后的代码是应用关闭 with清理任务残留
+'''
 
 @asynccontextmanager
 async def init(model):
